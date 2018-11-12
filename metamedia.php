@@ -97,5 +97,9 @@ class MetaMedia {
 
 };
 
-add_action( 'plugins_loaded', create_function( '', 'global $MetaMedia; $MetaMedia = new MetaMedia();' ) );
-?>
+add_action(
+	'plugins_loaded', function () {
+		global $MetaMedia;
+		$MetaMedia = new MetaMedia();
+	}
+);
